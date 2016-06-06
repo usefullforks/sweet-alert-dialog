@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -243,7 +244,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public SweetAlertDialog setTitleText (String text) {
         mTitleText = text;
         if (mTitleTextView != null && mTitleText != null) {
-            mTitleTextView.setText(mTitleText);
+            mTitleTextView.setText(Html.fromHtml(mTitleText));
         }
         return this;
     }
@@ -269,7 +270,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mContentText = text;
         if (mContentTextView != null && mContentText != null) {
             showContentText(true);
-            mContentTextView.setText(mContentText);
+            mContentTextView.setText(Html.fromHtml(mContentText));
         }
         return this;
     }
